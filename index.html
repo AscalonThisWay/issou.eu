@@ -12,13 +12,14 @@
     <audio id="risissou" src="sounds/risissou.mp3"></audio>
     <audio id="soumineur" src="sounds/soumineur.mp3"></audio>
     <audio id="fivemoreissou" src="sounds/fivemoreissou.mp3"></audio>
+    <audio id="ouhhiouhahah" src="sounds/ouhhiouhahah.mp3"></audio>
     <script>
         function issou() {
             var audio = document.getElementById("issou");
             audio.play();
         }
         var keypresses = [];
-        mySounds = ['issou', 'risissou', 'soumineur', 'fivemoreissou']
+        mySounds = ['issou', 'risissou', 'soumineur', 'fivemoreissou', 'ouhhiouhahah']
         function randomSound() {
             var index = Math.floor(Math.random() * 1000) % mySounds.length;
             var id = mySounds[index];
