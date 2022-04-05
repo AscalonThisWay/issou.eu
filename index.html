@@ -9,18 +9,35 @@
 
 <body style="background-image:url('/images/issou.jpg');background-repeat:repeat;background-size: 5%;" onclick="issou()">
     <audio id="issou" src="sounds/issou.mp3"></audio>
+    <audio id="risissou" src="sounds/risissou.mp3"></audio>
+    <audio id="soumineur" src="sounds/soumineur.mp3"></audio>
+    <audio id="fivemoreissou" src="sounds/fivemoreissou.mp3"></audio>
     <script>
         function issou() {
-          var audio = document.getElementById("issou");
-          audio.play();
+            var audio = document.getElementById("issou");
+            audio.play();
         }
-      </script>
+        var keypresses = [];
+        mySounds = ['issou', 'risissou', 'soumineur', 'fivemoreissou']
+        function randomSound() {
+            var index = Math.floor(Math.random() * 1000) % mySounds.length;
+            var id = mySounds[index];
+            var audioElement = document.getElementById(id);
+            audioElement.play();
+        }
+        document.addEventListener('keyup', function (e) {
+            keypresses.push(e.key);
+            if (keypresses.slice(-5).join("") === "issou") {
+                randomSound();
+            }
+        });
+    </script>
     <p style="text-align:center;margin :0px;">
         <iframe
             src="https://calendar.google.com/calendar/embed?wkst=2&bgcolor=%23AD1457&ctz=Europe%2FParis&showTitle=1&mode=WEEK&showDate=1&src=djh2cDB1cjdqYXIyZDRuOGdtYTNoYXNoZGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%230B8043"
-            style="border:solid 1px #777;width:75%;height:80vh;"  frameborder="0" scrolling="no"></iframe>
+            style="border:solid 1px #777;width:75%;height:80vh;" frameborder="0" scrolling="no"></iframe>
     </p>
-</div>
+    </div>
 </body>
 
 </html>
